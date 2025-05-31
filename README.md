@@ -18,56 +18,35 @@ This project is an interactive sales dashboard built using Python, Streamlit, an
    ```bash
    git clone https://github.com/sravyamangipudi11/E-commerce-dashboard.git
    cd E-commerce-dashboard
-Create and activate a virtual environment (recommended):
+2. Create and activate a virtual environment (recommended):
+ON WINDOWS:
+    ```bash
+   python -m venv venv
+   venv\Scripts\activate
 
-bash
-Copy
-Edit
-Create and activate a virtual environment (recommended)
-On Windows:
+3. On macOS/Linux:
+    ```bash
+   python3 -m venv venv
+   source venv/bin/activate
 
-bash
-Copy
-Edit
-python -m venv venv
-venv\Scripts\activate
-On macOS/Linux:
+4. Install the required packages
+     ```bash
+   pip install -r requirements.txt
+     
+5. USAGE:Run the Streamlit app
+   ```bash
+   streamlit run app.py
 
-bash
-Copy
-Edit
-python3 -m venv venv
-source venv/bin/activate
-Install the required packages
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Run the Streamlit app
-bash
-Copy
-Edit
-streamlit run app.py
+This will open the dashboard in your default browser.
 
-Data
+## Data
+
 The dataset used is Superstore.csv, containing sales data for the e-commerce store.
 
-Dependencies
-pandas
+## Dependencies
 
-numpy
+   pandas,numpy,matplotlib,plotly,prophet,streamlit
 
-matplotlib
-
-plotly
-
-prophet
-
-streamlit
-
-License
+# License
 This project is licensed under the MIT License.
 
-pgsql
-Copy
-Edit
