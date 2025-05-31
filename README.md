@@ -23,25 +23,31 @@ Create and activate a virtual environment (recommended):
 bash
 Copy
 Edit
-python -m venv venv
-# On Windows:
-venv\Scripts\activate
-# On macOS/Linux:
-source venv/bin/activate
-Install the required packages:
+Create and activate a virtual environment (recommended)
+On Windows:
 
+bash
+Copy
+Edit
+python -m venv venv
+venv\Scripts\activate
+On macOS/Linux:
+
+bash
+Copy
+Edit
+python3 -m venv venv
+source venv/bin/activate
+Install the required packages
 bash
 Copy
 Edit
 pip install -r requirements.txt
-Usage
-Run the Streamlit app:
-
+Run the Streamlit app
 bash
 Copy
 Edit
 streamlit run app.py
-This will open the dashboard in your default browser.
 
 Data
 The dataset used is Superstore.csv, containing sales data for the e-commerce store.
