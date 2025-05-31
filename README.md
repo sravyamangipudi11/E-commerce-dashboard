@@ -24,7 +24,10 @@ bash
 Copy
 Edit
 python -m venv venv
-source venv/bin/activate   # On Windows: venv\Scripts\activate
+# On Windows:
+venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
 Install the required packages:
 
 bash
@@ -58,3 +61,7 @@ streamlit
 
 License
 This project is licensed under the MIT License.
+
+pgsql
+Copy
+Edit
