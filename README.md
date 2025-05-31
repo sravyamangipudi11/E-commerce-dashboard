@@ -33,20 +33,20 @@ ON WINDOWS:
      ```bash
    pip install -r requirements.txt
      
-5. USAGE:Run the Streamlit app
+5. USAGE▶️:Run the Streamlit app
    ```bash
    streamlit run app.py
 
 This will open the dashboard in your default browser.
 
-## Data
+## Data📊
 
 The dataset used is Superstore.csv, containing sales data for the e-commerce store.
 
-## Dependencies
+## Dependencies📦
 
    pandas,numpy,matplotlib,plotly,prophet,streamlit
 
-# License
+## License📝 
 This project is licensed under the MIT License.
 
