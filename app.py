@@ -9,11 +9,9 @@ st.title("📦 E-Commerce Sales Dashboard")
 # Load dataset
 @st.cache_data
 def load_data():
-    df = pd.read_csv(
-        'C:/Users/bharg/OneDrive/Desktop/e commerce_sales_dashboard/data/Sample - Superstore.csv',
-        encoding='ISO-8859-1'
-    )
+    df = pd.read_csv('data/superstore.csv', encoding='ISO-8859-1')
     return df
+
 
 df = load_data()
 
