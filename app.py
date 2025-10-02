@@ -58,6 +58,7 @@ region_profit.plot(kind='bar', ax=ax2, color='lightgreen')
 ax2.set_ylabel('Profit')
 ax2.set_title('Total Profit by Region')
 st.pyplot(fig2)
+
 # Convert Order Date to datetime if not already
 df['Order Date'] = pd.to_datetime(df['Order Date'])
 
@@ -92,6 +93,7 @@ ax3.set_title("Monthly Sales")
 ax3.set_xlabel("Month")
 ax3.set_ylabel("Sales")
 st.pyplot(fig3)
+
 # === Section 5: Customer Segmentation (RFM Analysis)
 st.write("### 🧠 Customer Segmentation using RFM Analysis")
 
@@ -133,6 +135,7 @@ with col3:
     sns.histplot(rfm['Monetary'], bins=20, ax=ax_m, color='green')
     ax_m.set_title("Monetary Distribution")
     st.pyplot(fig_m)
+
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
@@ -167,12 +170,9 @@ st.bar_chart(rfm['Segment'].value_counts())
 st.write("#### 🧾 Sample Customers by Segment")
 segment_selected = st.selectbox("Select Segment to View Customers", rfm['Segment'].unique())
 st.dataframe(rfm[rfm['Segment'] == segment_selected].sort_values(by='Monetary', ascending=False).head(10))
+
 from forecasting import preprocess_forecast_data, forecast_sales
 import plotly.express as px
-
-# Load data
-df = pd.read_csv('superstore.csv', encoding='latin1')
-
 
 # Forecasting
 monthly_data = preprocess_forecast_data(df)
@@ -182,5 +182,3 @@ forecast = forecast_sales(monthly_data)
 st.subheader("📈 Sales Forecast (Next 6 Months)")
 fig_forecast = px.line(forecast, x='ds', y='yhat', labels={'ds': 'Date', 'yhat': 'Predicted Sales'})
 st.plotly_chart(fig_forecast, use_container_width=True)
-
-
