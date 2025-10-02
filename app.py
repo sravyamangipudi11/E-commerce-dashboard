@@ -9,7 +9,7 @@ st.title("📦 E-Commerce Sales Dashboard")
 # Load dataset
 @st.cache_data
 def load_data():
-    df = pd.read_csv('data/superstore.csv', encoding='ISO-8859-1')
+    df = pd.read_csv('data/Superstore.csv', encoding='ISO-8859-1')
     return df
 
 
