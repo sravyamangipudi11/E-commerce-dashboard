@@ -12,7 +12,6 @@ def load_data():
     df = pd.read_csv('data/Superstore.csv', encoding='ISO-8859-1')
     return df
 
-
 df = load_data()
 
 # === Section 1: Raw data
@@ -174,11 +173,23 @@ st.dataframe(rfm[rfm['Segment'] == segment_selected].sort_values(by='Monetary', 
 from forecasting import preprocess_forecast_data, forecast_sales
 import plotly.express as px
 
-# Forecasting
-monthly_data = preprocess_forecast_data(df)
-forecast = forecast_sales(monthly_data)
+# === Section 6: Forecasting (Dynamic per Category) ===
+st.write("### 🔮 Sales Forecasting")
 
-# Plot forecast
-st.subheader("📈 Sales Forecast (Next 6 Months)")
-fig_forecast = px.line(forecast, x='ds', y='yhat', labels={'ds': 'Date', 'yhat': 'Predicted Sales'})
-st.plotly_chart(fig_forecast, use_container_width=True)
+# Filter forecast data based on selected category
+category_data = df[df['Category'] == category]
+
+if len(category_data) > 20:
+    monthly_data = preprocess_forecast_data(category_data)
+    forecast = forecast_sales(monthly_data)
+
+    st.subheader(f"📈 Sales Forecast (Next 6 Months) for {category}")
+    fig_forecast = px.line(
+        forecast,
+        x='ds',
+        y='yhat',
+        labels={'ds': 'Date', 'yhat': 'Predicted Sales'}
+    )
+    st.plotly_chart(fig_forecast, use_container_width=True)
+else:
+    st.warning("Not enough data to generate a reliable forecast for this category.")
